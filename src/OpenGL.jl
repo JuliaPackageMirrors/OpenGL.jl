@@ -15,3 +15,18 @@ if isdefined(:OpenGLver) && OpenGLver in OPENGL_VERSIONS
     using GLU
     using OpenGLStd
 end
+
+module OpenGL
+
+macro version(v)
+    quote
+        local v = replace($v, ".", "")
+        local file = "OpenGL/src/gl$(v)/gl$(v)"
+
+        eval(require(file))
+        eval(Expr(:using, :OpenGLStd))
+        eval(Expr(:export, names(eval(:OpenGLStd))...))
+    end
+end
+
+end # module OpenGL
