@@ -1,29 +1,13 @@
 #  Jasper den Ouden 02-08-2012
 # Placed in public domain.
 
+const OPENGL_VERSIONS = "1.0", "2.1", "3.2", "3.3", "4.2", "4.3"
+if isdefined(:OpenGLver) && OpenGLver in OPENGL_VERSIONS
+    OpenGLmod = string("gl", replace(OpenGLver, ".", ""))
+    require("OpenGL/src/$OpenGLmod/$OpenGLmod")
+    require("OpenGL/src/$OpenGLmod/$(OpenGLmod)aux")
 
-require("OpenGL/src/glu/glu")
-
-global OpenGLver
-if OpenGLver == "1.0"
-    require("OpenGL/src/gl10/gl10")
-    require("OpenGL/src/gl10/gl10aux")
-elseif OpenGLver == "2.1"
-    require("OpenGL/src/gl21/gl21")
-    require("OpenGL/src/gl21/gl21aux")
-elseif OpenGLver == "3.2"
-    require("OpenGL/src/gl32/gl32")
-    require("OpenGL/src/gl32/gl32aux")
-elseif OpenGLver == "3.3"
-    require("OpenGL/src/gl33/gl33")
-    require("OpenGL/src/gl33/gl33aux")
-elseif OpenGLver == "4.2"
-    require("OpenGL/src/gl42/gl42")
-    require("OpenGL/src/gl42/gl42aux")
-elseif OpenGLver == "4.3"
-    require("OpenGL/src/gl43/gl43")
-    require("OpenGL/src/gl43/gl43aux")
+    require("OpenGL/src/glu/glu")
+    using GLU
+    using OpenGLStd
 end
-
-using GLU
-using OpenGLStd
