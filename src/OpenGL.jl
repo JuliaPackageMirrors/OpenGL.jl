@@ -32,7 +32,6 @@ macro version(v)
         # The only workaround I can think of is to make the same call that
         # the require function makes, ourselves, in the context of our module.
         OpenGL.eval(:(Base.include_from_node1(Base.find_in_path($file))))
-
         # Unlike the require() function, the `using` builtin accepts a module
         # context to operate within.
         OpenGL.eval(Expr(:using, :OpenGL, :OpenGLStd))
@@ -45,6 +44,14 @@ macro version(v)
         OpenGL.eval(:(Base.include_from_node1(Base.find_in_path($glu))))
         OpenGL.eval(Expr(:using, :OpenGL, :GLU))
 
+    end
+end
+
+macro load()
+    quote
+        OpenGL.eval(Expr(:export, names(OpenGL.eval(:OpenGLStd))...))
+        OpenGL.eval(Expr(:export, names(OpenGL.eval(:OpenGLAux))...))
+        OpenGL.eval(Expr(:export, names(OpenGL.eval(:GLU))...))
     end
 end
 
