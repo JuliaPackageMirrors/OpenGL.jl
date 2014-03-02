@@ -1,10 +1,10 @@
 module OpenGLAux
 
-import OpenGLStd.glVertex2i, OpenGLStd.glVertex3i, OpenGLStd.glVertex2d, OpenGLStd.glVertex3d, OpenGLStd.glVertex4d,
-       OpenGLStd.glTexCoord2i, OpenGLStd.glTexCoord3i, OpenGLStd.glTexCoord4i, OpenGLStd.glTexCoord2d, OpenGLStd.glTexCoord3d,
-       OpenGLStd.glTexCoord4d, OpenGLStd.glNormal3d, OpenGLStd.glColor3f, OpenGLStd.glColor4f, OpenGLStd.glColor3b, OpenGLStd.glColor4b,
-       OpenGLStd.glScaled, OpenGLStd.glTranslated, OpenGLStd.glRotated, OpenGLStd.glEnable, OpenGLStd.glDisable, OpenGLStd.glBegin,
-       OpenGLStd.glEnd, OpenGLStd.glPushMatrix, OpenGLStd.glLoadIdentity
+import OpenGL.glVertex2i, OpenGL.glVertex3i, OpenGL.glVertex2d, OpenGL.glVertex3d, OpenGL.glVertex4d,
+       OpenGL.glTexCoord2i, OpenGL.glTexCoord3i, OpenGL.glTexCoord4i, OpenGL.glTexCoord2d, OpenGL.glTexCoord3d,
+       OpenGL.glTexCoord4d, OpenGL.glNormal3d, OpenGL.glColor3f, OpenGL.glColor4f, OpenGL.glColor3b, OpenGL.glColor4b,
+       OpenGL.glScaled, OpenGL.glTranslated, OpenGL.glRotated, OpenGL.glEnable, OpenGL.glDisable, OpenGL.glBegin,
+       OpenGL.glEnd, OpenGL.glPushMatrix, OpenGL.glLoadIdentity
 
 #Handy stuff to make use of Julia features.
 export glVertex, glColor, glColorb, glTexCoord, glNormal,

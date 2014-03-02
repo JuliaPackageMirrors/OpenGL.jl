@@ -1,6 +1,6 @@
 module OpenGLAux
 
-import OpenGLStd.glEnable, OpenGLStd.glDisable
+import OpenGL.glEnable, OpenGL.glDisable
 
 import Images.imread
 
