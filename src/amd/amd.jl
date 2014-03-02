@@ -1,4 +1,4 @@
-module AMD
+module AMD 
 
 import GetC.@getCFun
 
@@ -25,6 +25,8 @@ typealias GLhalfARB Cushort
 typealias GLhalfNV Cushort
 typealias GLsync Ptr{Void}
 typealias Pointer Ptr{Void}
+typealias GLsizeiptr Cint
+typealias GLintptr Cptrdiff_t
 const FACTOR_MAX_AMD = 0x901D
 export FACTOR_MAX_AMD
 const FACTOR_MIN_AMD = 0x901C
@@ -143,7 +145,7 @@ export glDebugMessageEnableAMD
 export glDebugMessageInsertAMD
 @getCFun "libGL" glDebugMessageCallbackAMD glDebugMessageCallbackAMD((*[0]byte)(callback), userParam::Ptr{Void})::Void
 export glDebugMessageCallbackAMD
-@getCFun "libGL" glGetDebugMessageLogAMD glGetDebugMessageLogAMD(count::GLuCint, bufsize::GLsizei, categories::Ptr{GLenum}, severities::Ptr{GLCuint}, ids::Ptr{GLuint}, lengths::Ptr{GLsizei}, message::Ptr{GLchar})::Uint
+@getCFun "libGL" glGetDebugMessageLogAMD glGetDebugMessageLogAMD(count::GLuint, bufsize::GLsizei, categories::Ptr{GLenum}, severities::Ptr{GLuint}, ids::Ptr{GLuint}, lengths::Ptr{GLsizei}, message::Ptr{GLchar})::Cuint
 export glGetDebugMessageLogAMD
 @getCFun "libGL" glBlendFuncIndexedAMD glBlendFuncIndexedAMD(buf::GLuint, src::GLenum, dst::GLenum)::Void
 export glBlendFuncIndexedAMD
@@ -161,7 +163,7 @@ export glMultiDrawElementsIndirectAMD
 export glGenNamesAMD
 @getCFun "libGL" glDeleteNamesAMD glDeleteNamesAMD(identifier::GLenum, num::GLuint, names::Ptr{GLuint})::Void
 export glDeleteNamesAMD
-@getCFun "libGL" glIsNameAMD glIsNameAMD(identifier::GLenum, name::GLuCint)::Bool
+@getCFun "libGL" glIsNameAMD glIsNameAMD(identifier::GLenum, name::GLuint)::Bool
 export glIsNameAMD
 @getCFun "libGL" glGetPerfMonitorGroupsAMD glGetPerfMonitorGroupsAMD(numGroups::Ptr{GLint}, groupsSize::GLsizei, groups::Ptr{GLuint})::Void
 export glGetPerfMonitorGroupsAMD
@@ -198,4 +200,4 @@ export glTessellationFactorAMD
 @getCFun "libGL" glTessellationModeAMD glTessellationModeAMD(mode::GLenum)::Void
 export glTessellationModeAMD
 
-end #module AMD
+end

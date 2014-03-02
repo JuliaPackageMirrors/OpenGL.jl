@@ -1,4 +1,4 @@
-module OpenGLStd
+module OpenGLStd 
 
 import GetC.@getCFun
 
@@ -25,6 +25,8 @@ typealias GLhalfARB Cushort
 typealias GLhalfNV Cushort
 typealias GLsync Ptr{Void}
 typealias Pointer Ptr{Void}
+typealias GLsizeiptr Cint
+typealias GLintptr Cptrdiff_t
 const X2D = 0x0600
 export X2D
 const X2_BYTES = 0x1407
@@ -3481,7 +3483,7 @@ export glReadPixels
 export glGetBooleanv
 @getCFun "libGL" glGetDoublev glGetDoublev(pname::GLenum, params::Ptr{GLdouble})::Void
 export glGetDoublev
-@getCFun "libGL" glGetError glGetError()::CuCint
+@getCFun "libGL" glGetError glGetError()::Cint
 export glGetError
 @getCFun "libGL" glGetFloatv glGetFloatv(pname::GLenum, params::Ptr{GLfloat})::Void
 export glGetFloatv
@@ -3531,7 +3533,7 @@ export glBindTexture
 export glDeleteTextures
 @getCFun "libGL" glGenTextures glGenTextures(n::GLsizei, textures::Ptr{GLuint})::Void
 export glGenTextures
-@getCFun "libGL" glIsTexture glIsTexture(texture::GLuCint)::Bool
+@getCFun "libGL" glIsTexture glIsTexture(texture::GLuint)::Bool
 export glIsTexture
 @getCFun "libGL" glIndexub glIndexub(c::GLubyte)::Void
 export glIndexub
@@ -3541,7 +3543,7 @@ export glIndexubv
 export glBlendColor
 @getCFun "libGL" glBlendEquation glBlendEquation(mode::GLenum)::Void
 export glBlendEquation
-@getCFun "libGL" glDrawRangeElements glDrawRangeElements(mode::GLenum, start::GLuint, end_::GLuint, count::GLsizei, type_::GLenum, indices::Ptr{Void})::Void
+@getCFun "libGL" glDrawRangeElements glDrawRangeElements(mode::GLenum, start::GLuint, end::GLuint, count::GLsizei, type_::GLenum, indices::Ptr{Void})::Void
 export glDrawRangeElements
 @getCFun "libGL" glTexImage3D glTexImage3D(target::GLenum, level::GLint, internalformat::GLint, width::GLsizei, height::GLsizei, depth::GLsizei, border::GLint, format::GLenum, type_::GLenum, pixels::Ptr{Void})::Void
 export glTexImage3D
@@ -3585,7 +3587,7 @@ export glPointParameteriv
 export glGenQueries
 @getCFun "libGL" glDeleteQueries glDeleteQueries(n::GLsizei, ids::Ptr{GLuint})::Void
 export glDeleteQueries
-@getCFun "libGL" glIsQuery glIsQuery(id::GLuCint)::Bool
+@getCFun "libGL" glIsQuery glIsQuery(id::GLuint)::Bool
 export glIsQuery
 @getCFun "libGL" glBeginQuery glBeginQuery(target::GLenum, id::GLuint)::Void
 export glBeginQuery
@@ -3603,7 +3605,7 @@ export glBindBuffer
 export glDeleteBuffers
 @getCFun "libGL" glGenBuffers glGenBuffers(n::GLsizei, buffers::Ptr{GLuint})::Void
 export glGenBuffers
-@getCFun "libGL" glIsBuffer glIsBuffer(buffer::GLuCint)::Bool
+@getCFun "libGL" glIsBuffer glIsBuffer(buffer::GLuint)::Bool
 export glIsBuffer
 @getCFun "libGL" glBufferData glBufferData(target::GLenum, size::GLsizeiptr, data::Ptr{Void}, usage::GLenum)::Void
 export glBufferData
@@ -3635,9 +3637,9 @@ export glAttachShader
 export glBindAttribLocation
 @getCFun "libGL" glCompileShader glCompileShader(shader::GLuint)::Void
 export glCompileShader
-@getCFun "libGL" glCreateProgram glCreateProgram()::UCint
+@getCFun "libGL" glCreateProgram glCreateProgram()::Cuint
 export glCreateProgram
-@getCFun "libGL" glCreateShader glCreateShader(type_::GLenum)::UCint
+@getCFun "libGL" glCreateShader glCreateShader(type_::GLenum)::Cuint
 export glCreateShader
 @getCFun "libGL" glDeleteProgram glDeleteProgram(program::GLuint)::Void
 export glDeleteProgram
@@ -3655,7 +3657,7 @@ export glGetActiveAttrib
 export glGetActiveUniform
 @getCFun "libGL" glGetAttachedShaders glGetAttachedShaders(program::GLuint, maxCount::GLsizei, count::Ptr{GLsizei}, obj::Ptr{GLuint})::Void
 export glGetAttachedShaders
-@getCFun "libGL" glGetAttribLocation glGetAttribLocation(program::GLuCint, name::Ptr{GLchar})::Int
+@getCFun "libGL" glGetAttribLocation glGetAttribLocation(program::GLuint, name::Ptr{GLchar})::Cint
 export glGetAttribLocation
 @getCFun "libGL" glGetProgramiv glGetProgramiv(program::GLuint, pname::GLenum, params::Ptr{GLint})::Void
 export glGetProgramiv
@@ -3667,7 +3669,7 @@ export glGetShaderiv
 export glGetShaderInfoLog
 @getCFun "libGL" glGetShaderSource glGetShaderSource(shader::GLuint, bufSize::GLsizei, length::Ptr{GLsizei}, source::Ptr{GLchar})::Void
 export glGetShaderSource
-@getCFun "libGL" glGetUniformLocation glGetUniformLocation(program::GLuCint, name::Ptr{GLchar})::Int
+@getCFun "libGL" glGetUniformLocation glGetUniformLocation(program::GLuint, name::Ptr{GLchar})::Cint
 export glGetUniformLocation
 @getCFun "libGL" glGetUniformfv glGetUniformfv(program::GLuint, location::GLint, params::Ptr{GLfloat})::Void
 export glGetUniformfv
@@ -3681,13 +3683,13 @@ export glGetVertexAttribfv
 export glGetVertexAttribiv
 @getCFun "libGL" glGetVertexAttribPointerv glGetVertexAttribPointerv(index::GLuint, pname::GLenum, pointer::Ptr{Ptr{Void}})::Void
 export glGetVertexAttribPointerv
-@getCFun "libGL" glIsProgram glIsProgram(program::GLuCint)::Bool
+@getCFun "libGL" glIsProgram glIsProgram(program::GLuint)::Bool
 export glIsProgram
-@getCFun "libGL" glIsShader glIsShader(shader::GLuCint)::Bool
+@getCFun "libGL" glIsShader glIsShader(shader::GLuint)::Bool
 export glIsShader
 @getCFun "libGL" glLinkProgram glLinkProgram(program::GLuint)::Void
 export glLinkProgram
-@getCFun "libGL" glShaderSource glShaderSource(shader::GLuint, count::GLsizei, string_::Ptr{Cuchar}, length::Ptr{GLint})::Void
+@getCFun "libGL" glShaderSource glShaderSource(shader::GLuint, count::GLsizei, string_::Ptr{Uint8}, length::Ptr{GLint})::Void
 export glShaderSource
 @getCFun "libGL" glUseProgram glUseProgram(program::GLuint)::Void
 export glUseProgram
@@ -3747,15 +3749,15 @@ export glUniformMatrix3x4fv
 export glUniformMatrix4x3fv
 @getCFun "libGL" glColorMaski glColorMaski(index::GLuint, r::GLboolean, g::GLboolean, b::GLboolean, a::GLboolean)::Void
 export glColorMaski
-@getCFun "libGL" glgetbooleani_v glGetBooleani_v(target::GLenum, index::GLuint, data::Ptr{GLboolean})::Void
-export glgetbooleani_v
-@getCFun "libGL" glgetintegeri_v glGetIntegeri_v(target::GLenum, index::GLuint, data::Ptr{GLint})::Void
-export glgetintegeri_v
+@getCFun "libGL" glGetBooleani_v glGetBooleani_v(target::GLenum, index::GLuint, data::Ptr{GLboolean})::Void
+export glGetBooleani_v
+@getCFun "libGL" glGetIntegeri_v glGetIntegeri_v(target::GLenum, index::GLuint, data::Ptr{GLint})::Void
+export glGetIntegeri_v
 @getCFun "libGL" glEnablei glEnablei(target::GLenum, index::GLuint)::Void
 export glEnablei
 @getCFun "libGL" glDisablei glDisablei(target::GLenum, index::GLuint)::Void
 export glDisablei
-@getCFun "libGL" glIsEnabledi glIsEnabledi(target::GLenum, index::GLuCint)::Bool
+@getCFun "libGL" glIsEnabledi glIsEnabledi(target::GLenum, index::GLuint)::Bool
 export glIsEnabledi
 @getCFun "libGL" glBeginTransformFeedback glBeginTransformFeedback(primitiveMode::GLenum)::Void
 export glBeginTransformFeedback
@@ -3765,7 +3767,7 @@ export glEndTransformFeedback
 export glBindBufferRange
 @getCFun "libGL" glBindBufferBase glBindBufferBase(target::GLenum, index::GLuint, buffer::GLuint)::Void
 export glBindBufferBase
-@getCFun "libGL" glTransformFeedbackVaryings glTransformFeedbackVaryings(program::GLuint, count::GLsizei, varyings::Ptr{Cuchar}, bufferMode::GLenum)::Void
+@getCFun "libGL" glTransformFeedbackVaryings glTransformFeedbackVaryings(program::GLuint, count::GLsizei, varyings::Ptr{Uint8}, bufferMode::GLenum)::Void
 export glTransformFeedbackVaryings
 @getCFun "libGL" glGetTransformFeedbackVarying glGetTransformFeedbackVarying(program::GLuint, index::GLuint, bufSize::GLsizei, length::Ptr{GLsizei}, size::Ptr{GLsizei}, type_::Ptr{GLenum}, name::Ptr{GLchar})::Void
 export glGetTransformFeedbackVarying
@@ -3825,7 +3827,7 @@ export glVertexAttribI4usv
 export glGetUniformuiv
 @getCFun "libGL" glBindFragDataLocation glBindFragDataLocation(program::GLuint, color::GLuint, name::Ptr{GLchar})::Void
 export glBindFragDataLocation
-@getCFun "libGL" glGetFragDataLocation glGetFragDataLocation(program::GLuCint, name::Ptr{GLchar})::Int
+@getCFun "libGL" glGetFragDataLocation glGetFragDataLocation(program::GLuint, name::Ptr{GLchar})::Cint
 export glGetFragDataLocation
 @getCFun "libGL" glUniform1ui glUniform1ui(location::GLint, v0::GLuint)::Void
 export glUniform1ui
@@ -3859,9 +3861,9 @@ export glClearBufferuiv
 export glClearBufferfv
 @getCFun "libGL" glClearBufferfi glClearBufferfi(buffer::GLenum, drawbuffer::GLint, depth::GLfloat, stencil::GLint)::Void
 export glClearBufferfi
-@getCFun "libGL" glGetStringi glGetStringi(name::GLenum, index::GLuCint)::Ptr{Cuchar}
+@getCFun "libGL" glGetStringi glGetStringi(name::GLenum, index::GLuint)::Ptr{Cuchar}
 export glGetStringi
-@getCFun "libGL" glIsRenderbuffer glIsRenderbuffer(renderbuffer::GLuCint)::Bool
+@getCFun "libGL" glIsRenderbuffer glIsRenderbuffer(renderbuffer::GLuint)::Bool
 export glIsRenderbuffer
 @getCFun "libGL" glBindRenderbuffer glBindRenderbuffer(target::GLenum, renderbuffer::GLuint)::Void
 export glBindRenderbuffer
@@ -3873,7 +3875,7 @@ export glGenRenderbuffers
 export glRenderbufferStorage
 @getCFun "libGL" glGetRenderbufferParameteriv glGetRenderbufferParameteriv(target::GLenum, pname::GLenum, params::Ptr{GLint})::Void
 export glGetRenderbufferParameteriv
-@getCFun "libGL" glIsFramebuffer glIsFramebuffer(framebuffer::GLuCint)::Bool
+@getCFun "libGL" glIsFramebuffer glIsFramebuffer(framebuffer::GLuint)::Bool
 export glIsFramebuffer
 @getCFun "libGL" glBindFramebuffer glBindFramebuffer(target::GLenum, framebuffer::GLuint)::Void
 export glBindFramebuffer
@@ -3881,7 +3883,7 @@ export glBindFramebuffer
 export glDeleteFramebuffers
 @getCFun "libGL" glGenFramebuffers glGenFramebuffers(n::GLsizei, framebuffers::Ptr{GLuint})::Void
 export glGenFramebuffers
-@getCFun "libGL" glCheckFramebufferStatus glCheckFramebufferStatus(target::GLenum)::CuCint
+@getCFun "libGL" glCheckFramebufferStatus glCheckFramebufferStatus(target::GLenum)::Cint
 export glCheckFramebufferStatus
 @getCFun "libGL" glFramebufferTexture1D glFramebufferTexture1D(target::GLenum, attachment::GLenum, textarget::GLenum, texture::GLuint, level::GLint)::Void
 export glFramebufferTexture1D
@@ -3901,7 +3903,7 @@ export glBlitFramebuffer
 export glRenderbufferStorageMultisample
 @getCFun "libGL" glFramebufferTextureLayer glFramebufferTextureLayer(target::GLenum, attachment::GLenum, texture::GLuint, level::GLint, layer::GLint)::Void
 export glFramebufferTextureLayer
-@getCFun "libGL" glMapBufferRange glMapBufferRange(target::GLenum, offset::GLCintptr, length::GLsizeiptr, access::GLbitfield)::Ptr{Void}
+@getCFun "libGL" glMapBufferRange glMapBufferRange(target::GLenum, offset::GLintptr, length::GLsizeiptr, access::GLbitfield)::Ptr{Void}
 export glMapBufferRange
 @getCFun "libGL" glFlushMappedBufferRange glFlushMappedBufferRange(target::GLenum, offset::GLintptr, length::GLsizeiptr)::Void
 export glFlushMappedBufferRange
@@ -3911,7 +3913,7 @@ export glBindVertexArray
 export glDeleteVertexArrays
 @getCFun "libGL" glGenVertexArrays glGenVertexArrays(n::GLsizei, arrays::Ptr{GLuint})::Void
 export glGenVertexArrays
-@getCFun "libGL" glIsVertexArray glIsVertexArray(array::GLuCint)::Bool
+@getCFun "libGL" glIsVertexArray glIsVertexArray(array::GLuint)::Bool
 export glIsVertexArray
 @getCFun "libGL" glDrawArraysInstanced glDrawArraysInstanced(mode::GLenum, first::GLint, count::GLsizei, instancecount::GLsizei)::Void
 export glDrawArraysInstanced
@@ -3923,13 +3925,13 @@ export glTexBuffer
 export glPrimitiveRestartIndex
 @getCFun "libGL" glCopyBufferSubData glCopyBufferSubData(readTarget::GLenum, writeTarget::GLenum, readOffset::GLintptr, writeOffset::GLintptr, size::GLsizeiptr)::Void
 export glCopyBufferSubData
-@getCFun "libGL" glGetUniformIndices glGetUniformIndices(program::GLuint, uniformCount::GLsizei, uniformNames::Ptr{Cuchar}, uniformIndices::Ptr{GLuint})::Void
+@getCFun "libGL" glGetUniformIndices glGetUniformIndices(program::GLuint, uniformCount::GLsizei, uniformNames::Ptr{Uint8}, uniformIndices::Ptr{GLuint})::Void
 export glGetUniformIndices
 @getCFun "libGL" glGetActiveUniformsiv glGetActiveUniformsiv(program::GLuint, uniformCount::GLsizei, uniformIndices::Ptr{GLuint}, pname::GLenum, params::Ptr{GLint})::Void
 export glGetActiveUniformsiv
 @getCFun "libGL" glGetActiveUniformName glGetActiveUniformName(program::GLuint, uniformIndex::GLuint, bufSize::GLsizei, length::Ptr{GLsizei}, uniformName::Ptr{GLchar})::Void
 export glGetActiveUniformName
-@getCFun "libGL" glGetUniformBlockIndex glGetUniformBlockIndex(program::GLuCint, uniformBlockName::Ptr{GLchar})::Uint
+@getCFun "libGL" glGetUniformBlockIndex glGetUniformBlockIndex(program::GLuint, uniformBlockName::Ptr{GLchar})::Cuint
 export glGetUniformBlockIndex
 @getCFun "libGL" glGetActiveUniformBlockiv glGetActiveUniformBlockiv(program::GLuint, uniformBlockIndex::GLuint, pname::GLenum, params::Ptr{GLint})::Void
 export glGetActiveUniformBlockiv
@@ -3937,15 +3939,15 @@ export glGetActiveUniformBlockiv
 export glGetActiveUniformBlockName
 @getCFun "libGL" glUniformBlockBinding glUniformBlockBinding(program::GLuint, uniformBlockIndex::GLuint, uniformBlockBinding::GLuint)::Void
 export glUniformBlockBinding
-@getCFun "libGL" glgetinteger64i_v glGetInteger64i_v(target::GLenum, index::GLuint, data::Ptr{GLint64})::Void
-export glgetinteger64i_v
+@getCFun "libGL" glGetInteger64i_v glGetInteger64i_v(target::GLenum, index::GLuint, data::Ptr{GLint64})::Void
+export glGetInteger64i_v
 @getCFun "libGL" glGetBufferParameteri64v glGetBufferParameteri64v(target::GLenum, pname::GLenum, params::Ptr{GLint64})::Void
 export glGetBufferParameteri64v
 @getCFun "libGL" glFramebufferTexture glFramebufferTexture(target::GLenum, attachment::GLenum, texture::GLuint, level::GLint)::Void
 export glFramebufferTexture
 @getCFun "libGL" glDrawElementsBaseVertex glDrawElementsBaseVertex(mode::GLenum, count::GLsizei, type_::GLenum, indices::Ptr{Void}, basevertex::GLint)::Void
 export glDrawElementsBaseVertex
-@getCFun "libGL" glDrawRangeElementsBaseVertex glDrawRangeElementsBaseVertex(mode::GLenum, start::GLuint, end_::GLuint, count::GLsizei, type_::GLenum, indices::Ptr{Void}, basevertex::GLint)::Void
+@getCFun "libGL" glDrawRangeElementsBaseVertex glDrawRangeElementsBaseVertex(mode::GLenum, start::GLuint, end::GLuint, count::GLsizei, type_::GLenum, indices::Ptr{Void}, basevertex::GLint)::Void
 export glDrawRangeElementsBaseVertex
 @getCFun "libGL" glDrawElementsInstancedBaseVertex glDrawElementsInstancedBaseVertex(mode::GLenum, count::GLsizei, type_::GLenum, indices::Ptr{Void}, instancecount::GLsizei, basevertex::GLint)::Void
 export glDrawElementsInstancedBaseVertex
@@ -3959,7 +3961,7 @@ export glFenceSync
 export glIsSync
 @getCFun "libGL" glDeleteSync glDeleteSync(sync::GLsync)::Void
 export glDeleteSync
-@getCFun "libGL" glClientWaitSync glClientWaitSync(sync::GLsync, flags::GLbitfield, timeout::GLuClonglong)::CuCint
+@getCFun "libGL" glClientWaitSync glClientWaitSync(sync::GLsync, flags::GLbitfield, timeout::GLuClonglong)::Cint
 export glClientWaitSync
 @getCFun "libGL" glWaitSync glWaitSync(sync::GLsync, flags::GLbitfield, timeout::GLuint64)::Void
 export glWaitSync
@@ -3979,13 +3981,13 @@ export glSampleMaski
 export glVertexAttribDivisor
 @getCFun "libGL" glBindFragDataLocationIndexed glBindFragDataLocationIndexed(program::GLuint, colorNumber::GLuint, index::GLuint, name::Ptr{GLchar})::Void
 export glBindFragDataLocationIndexed
-@getCFun "libGL" glGetFragDataIndex glGetFragDataIndex(program::GLuCint, name::Ptr{GLchar})::Int
+@getCFun "libGL" glGetFragDataIndex glGetFragDataIndex(program::GLuint, name::Ptr{GLchar})::Cint
 export glGetFragDataIndex
 @getCFun "libGL" glGenSamplers glGenSamplers(count::GLsizei, samplers::Ptr{GLuint})::Void
 export glGenSamplers
 @getCFun "libGL" glDeleteSamplers glDeleteSamplers(count::GLsizei, samplers::Ptr{GLuint})::Void
 export glDeleteSamplers
-@getCFun "libGL" glIsSampler glIsSampler(sampler::GLuCint)::Bool
+@getCFun "libGL" glIsSampler glIsSampler(sampler::GLuint)::Bool
 export glIsSampler
 @getCFun "libGL" glBindSampler glBindSampler(unit::GLuint, sampler::GLuint)::Void
 export glBindSampler
@@ -4141,9 +4143,9 @@ export glUniformMatrix4x2dv
 export glUniformMatrix4x3dv
 @getCFun "libGL" glGetUniformdv glGetUniformdv(program::GLuint, location::GLint, params::Ptr{GLdouble})::Void
 export glGetUniformdv
-@getCFun "libGL" glGetSubroutineUniformLocation glGetSubroutineUniformLocation(program::GLuCint, shadertype::GLenum, name::Ptr{GLchar})::Int
+@getCFun "libGL" glGetSubroutineUniformLocation glGetSubroutineUniformLocation(program::GLuint, shadertype::GLenum, name::Ptr{GLchar})::Cint
 export glGetSubroutineUniformLocation
-@getCFun "libGL" glGetSubroutineIndex glGetSubroutineIndex(program::GLuCint, shadertype::GLenum, name::Ptr{GLchar})::Uint
+@getCFun "libGL" glGetSubroutineIndex glGetSubroutineIndex(program::GLuint, shadertype::GLenum, name::Ptr{GLchar})::Cuint
 export glGetSubroutineIndex
 @getCFun "libGL" glGetActiveSubroutineUniformiv glGetActiveSubroutineUniformiv(program::GLuint, shadertype::GLenum, index::GLuint, pname::GLenum, values::Ptr{GLint})::Void
 export glGetActiveSubroutineUniformiv
@@ -4167,7 +4169,7 @@ export glBindTransformFeedback
 export glDeleteTransformFeedbacks
 @getCFun "libGL" glGenTransformFeedbacks glGenTransformFeedbacks(n::GLsizei, ids::Ptr{GLuint})::Void
 export glGenTransformFeedbacks
-@getCFun "libGL" glIsTransformFeedback glIsTransformFeedback(id::GLuCint)::Bool
+@getCFun "libGL" glIsTransformFeedback glIsTransformFeedback(id::GLuint)::Bool
 export glIsTransformFeedback
 @getCFun "libGL" glPauseTransformFeedback glPauseTransformFeedback()::Void
 export glPauseTransformFeedback
@@ -4203,7 +4205,7 @@ export glProgramParameteri
 export glUseProgramStages
 @getCFun "libGL" glActiveShaderProgram glActiveShaderProgram(pipeline::GLuint, program::GLuint)::Void
 export glActiveShaderProgram
-@getCFun "libGL" glCreateShaderProgramv glCreateShaderProgramv(type_::GLenum, count::GLsizei, strings::Ptr{Cuchar})::UCint
+@getCFun "libGL" glCreateShaderProgramv glCreateShaderProgramv(type_::GLenum, count::GLsizei, strings::Ptr{Cuint8})::Uint
 export glCreateShaderProgramv
 @getCFun "libGL" glBindProgramPipeline glBindProgramPipeline(pipeline::GLuint)::Void
 export glBindProgramPipeline
@@ -4211,7 +4213,7 @@ export glBindProgramPipeline
 export glDeleteProgramPipelines
 @getCFun "libGL" glGenProgramPipelines glGenProgramPipelines(n::GLsizei, pipelines::Ptr{GLuint})::Void
 export glGenProgramPipelines
-@getCFun "libGL" glIsProgramPipeline glIsProgramPipeline(pipeline::GLuCint)::Bool
+@getCFun "libGL" glIsProgramPipeline glIsProgramPipeline(pipeline::GLuint)::Bool
 export glIsProgramPipeline
 @getCFun "libGL" glGetProgramPipelineiv glGetProgramPipelineiv(pipeline::GLuint, pname::GLenum, params::Ptr{GLint})::Void
 export glGetProgramPipelineiv
@@ -4355,10 +4357,10 @@ export glScissorIndexedv
 export glDepthRangeArrayv
 @getCFun "libGL" glDepthRangeIndexed glDepthRangeIndexed(index::GLuint, n::GLdouble, f::GLdouble)::Void
 export glDepthRangeIndexed
-@getCFun "libGL" glgetfloati_v glGetFloati_v(target::GLenum, index::GLuint, data::Ptr{GLfloat})::Void
-export glgetfloati_v
-@getCFun "libGL" glgetdoublei_v glGetDoublei_v(target::GLenum, index::GLuint, data::Ptr{GLdouble})::Void
-export glgetdoublei_v
+@getCFun "libGL" glGetFloati_v glGetFloati_v(target::GLenum, index::GLuint, data::Ptr{GLfloat})::Void
+export glGetFloati_v
+@getCFun "libGL" glGetDoublei_v glGetDoublei_v(target::GLenum, index::GLuint, data::Ptr{GLdouble})::Void
+export glGetDoublei_v
 @getCFun "libGL" glDrawArraysInstancedBaseInstance glDrawArraysInstancedBaseInstance(mode::GLenum, first::GLint, count::GLsizei, instancecount::GLsizei, baseinstance::GLuint)::Void
 export glDrawArraysInstancedBaseInstance
 @getCFun "libGL" glDrawElementsInstancedBaseInstance glDrawElementsInstancedBaseInstance(mode::GLenum, count::GLsizei, type_::GLenum, indices::Ptr{Void}, instancecount::GLsizei, baseinstance::GLuint)::Void
@@ -4407,9 +4409,9 @@ export glCopyImageSubData
 export glDebugMessageControl
 @getCFun "libGL" glDebugMessageInsert glDebugMessageInsert(source::GLenum, type_::GLenum, id::GLuint, severity::GLenum, length::GLsizei, buf::Ptr{GLchar})::Void
 export glDebugMessageInsert
-@getCFun "libGL" glDebugMessageCallback glDebugMessageCallback(callback::Ptr{Void}, userParam::Ptr{Void})::Void
+@getCFun "libGL" glDebugMessageCallback glDebugMessageCallback((*[0]byte)(callback), userParam::Ptr{Void})::Void
 export glDebugMessageCallback
-@getCFun "libGL" glGetDebugMessageLog glGetDebugMessageLog(count::GLuCint, bufsize::GLsizei, sources::Ptr{GLenum}, types::Ptr{GLenum}, ids::Ptr{GLCuint}, severities::Ptr{GLenum}, lengths::Ptr{GLsizei}, messageLog::Ptr{GLchar})::Uint
+@getCFun "libGL" glGetDebugMessageLog glGetDebugMessageLog(count::GLuint, bufsize::GLsizei, sources::Ptr{GLenum}, types::Ptr{GLenum}, ids::Ptr{GLuint}, severities::Ptr{GLenum}, lengths::Ptr{GLsizei}, messageLog::Ptr{GLchar})::Cuint
 export glGetDebugMessageLog
 @getCFun "libGL" glPushDebugGroup glPushDebugGroup(source::GLenum, id::GLuint, length::GLsizei, message::Ptr{GLchar})::Void
 export glPushDebugGroup
@@ -4451,15 +4453,15 @@ export glMultiDrawArraysIndirect
 export glMultiDrawElementsIndirect
 @getCFun "libGL" glGetProgramInterfaceiv glGetProgramInterfaceiv(program::GLuint, programInterface::GLenum, pname::GLenum, params::Ptr{GLint})::Void
 export glGetProgramInterfaceiv
-@getCFun "libGL" glGetProgramResourceIndex glGetProgramResourceIndex(program::GLuCint, programInterface::GLenum, name::Ptr{GLchar})::Uint
+@getCFun "libGL" glGetProgramResourceIndex glGetProgramResourceIndex(program::GLuint, programCinterface::GLenum, name::Ptr{GLchar})::Cuint
 export glGetProgramResourceIndex
 @getCFun "libGL" glGetProgramResourceName glGetProgramResourceName(program::GLuint, programInterface::GLenum, index::GLuint, bufSize::GLsizei, length::Ptr{GLsizei}, name::Ptr{GLchar})::Void
 export glGetProgramResourceName
 @getCFun "libGL" glGetProgramResourceiv glGetProgramResourceiv(program::GLuint, programInterface::GLenum, index::GLuint, propCount::GLsizei, props::Ptr{GLenum}, bufSize::GLsizei, length::Ptr{GLsizei}, params::Ptr{GLint})::Void
 export glGetProgramResourceiv
-@getCFun "libGL" glGetProgramResourceLocation glGetProgramResourceLocation(program::GLuCint, programInterface::GLenum, name::Ptr{GLchar})::Int
+@getCFun "libGL" glGetProgramResourceLocation glGetProgramResourceLocation(program::GLuint, programCinterface::GLenum, name::Ptr{GLchar})::Int
 export glGetProgramResourceLocation
-@getCFun "libGL" glGetProgramResourceLocationIndex glGetProgramResourceLocationIndex(program::GLuCint, programInterface::GLenum, name::Ptr{GLchar})::Int
+@getCFun "libGL" glGetProgramResourceLocationIndex glGetProgramResourceLocationIndex(program::GLuint, programCinterface::GLenum, name::Ptr{GLchar})::Int
 export glGetProgramResourceLocationIndex
 @getCFun "libGL" glShaderStorageBlockBinding glShaderStorageBlockBinding(program::GLuint, storageBlockIndex::GLuint, storageBlockBinding::GLuint)::Void
 export glShaderStorageBlockBinding
@@ -4502,4 +4504,4 @@ export glVertexArrayVertexAttribBindingEXT
 @getCFun "libGL" glVertexArrayVertexBindingDivisorEXT glVertexArrayVertexBindingDivisorEXT(vaobj::GLuint, bindingindex::GLuint, divisor::GLuint)::Void
 export glVertexArrayVertexBindingDivisorEXT
 
-end #module GL43
+end
