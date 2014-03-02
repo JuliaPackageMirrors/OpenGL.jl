@@ -1,4 +1,4 @@
-module EXT 
+module GLEXT 
 
 import GetC.@getCFun
 
