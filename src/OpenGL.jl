@@ -23,6 +23,7 @@ macro version(v)
         local v = replace($v, ".", "")
         local file = "OpenGL/src/gl$(v)/gl$(v)"
         local aux = "OpenGL/src/gl$(v)/gl$(v)aux"
+        local glu = "OpenGL/src/glu/glu"
 
         # These two Base library calls are being used instead of just
         # require()-ing the file because the require() function itself has a
@@ -39,6 +40,11 @@ macro version(v)
         # Same operations as above, for the auxiliary functions.
         OpenGL.eval(:(Base.include_from_node1(Base.find_in_path($aux))))
         OpenGL.eval(Expr(:using, :OpenGL, :OpenGLAux))
+
+        # GLU.
+        OpenGL.eval(:(Base.include_from_node1(Base.find_in_path($glu))))
+        OpenGL.eval(Expr(:using, :OpenGL, :GLU))
+
     end
 end
 
