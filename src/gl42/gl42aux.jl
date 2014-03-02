@@ -1,4 +1,4 @@
-module OpenGL
+module OpenGLAux
 
 import OpenGLStd.glEnable, OpenGLStd.glDisable
 
@@ -43,4 +43,4 @@ function glimread(filename::String)
     return img1D, w, h
 end
 
-end
+end # module OpenGLAux

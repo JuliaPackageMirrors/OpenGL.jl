@@ -1,4 +1,4 @@
-module OpenGL
+module OpenGLAux
 
 import OpenGLStd.glVertex2i, OpenGLStd.glVertex3i, OpenGLStd.glVertex2d, OpenGLStd.glVertex3d, OpenGLStd.glVertex4d,
        OpenGLStd.glTexCoord2i, OpenGLStd.glTexCoord3i, OpenGLStd.glTexCoord4i, OpenGLStd.glTexCoord2d, OpenGLStd.glTexCoord3d,
@@ -263,4 +263,4 @@ function glimread(filename::String)
     return img1D, w, h
 end
 
-end
+end # module OpenGLAux
