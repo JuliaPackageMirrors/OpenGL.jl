@@ -599,10 +599,10 @@ export wglGetPixelFormatAttribivEXT
 export wglGetPixelFormatAttribfvEXT
 @getCFun "libGL" wglChoosePixelFormatEXT wglChoosePixelFormatEXT(hdc::HDC, piAttribIList::Ptr{Cint}, pfAttribFList::Ptr{Cfloat}, nMaxFormats::Cuint, piFormats::Ptr{Cint}, nNumFormats::Ptr{Cuint})::Cint
 export wglChoosePixelFormatEXT
-@getCFun "libGL" wglSwapCintervalEXT wglSwapCintervalEXT(interval::Cint)::Cint
-export wglSwapCintervalEXT
-@getCFun "libGL" wglGetSwapCintervalEXT wglGetSwapCintervalEXT()::Cint
-export wglGetSwapCintervalEXT
+@getCFun "libGL" wglSwapIntervalEXT wglSwapIntervalEXT(interval::Cint)::Cint
+export wglSwapIntervalEXT
+@getCFun "libGL" wglGetSwapIntervalEXT wglGetSwapIntervalEXT()::Cint
+export wglGetSwapIntervalEXT
 @getCFun "libGL" wglGetDigitalVideoParametersI3D wglGetDigitalVideoParametersI3D(hDC::HDC, iAttribute::Cint, piValue::Ptr{Cint})::Cint
 export wglGetDigitalVideoParametersI3D
 @getCFun "libGL" wglSetDigitalVideoParametersI3D wglSetDigitalVideoParametersI3D(hDC::HDC, iAttribute::Cint, piValue::Ptr{Cint})::Cint
@@ -681,18 +681,18 @@ export wglDXLockObjectsNV
 export wglDXUnlockObjectsNV
 @getCFun "libGL" wglCopyImageSubDataNV wglCopyImageSubDataNV(hSrcRC::HGLRC, srcName::GLuint, srcTarget::GLenum, srcLevel::GLint, srcX::GLint, srcY::GLint, srcZ::GLint, hDstRC::HGLRC, dstName::GLuint, dstTarget::GLenum, dstLevel::GLint, dstX::GLint, dstY::GLint, dstZ::GLint, width::GLsizei, height::GLsizei, depth::GLsizei)::Cint
 export wglCopyImageSubDataNV
-@getCFun "libGL" wglCintGpusNV wglCintGpusNV(iGpuIndex::Cuint, phGpu::HGPUNV)::Cint
-export wglCintGpusNV
-@getCFun "libGL" wglCintGpuDevicesNV wglCintGpuDevicesNV(hGpu::HGPUNV, iDeviceIndex::Cuint, lpGpuDevice::PGPU_DEVICE)::Cint
-export wglCintGpuDevicesNV
+@getCFun "libGL" wglEnumGpusNV wglEnumGpusNV(iGpuIndex::Cuint, phGpu::HGPUNV)::Cint
+export wglEnumGpusNV
+@getCFun "libGL" wglEnumGpuDevicesNV wglEnumGpuDevicesNV(hGpu::HGPUNV, iDeviceIndex::Cuint, lpGpuDevice::PGPU_DEVICE)::Cint
+export wglEnumGpuDevicesNV
 @getCFun "libGL" wglCreateAffinityDCNV wglCreateAffinityDCNV(phGpuList::HGPUNV)::Ptr{Void}
 export wglCreateAffinityDCNV
-@getCFun "libGL" wglCintGpusFromAffinityDCNV wglCintGpusFromAffinityDCNV(hAffinityDC::HDC, iGpuIndex::Cuint, hGpu::HGPUNV)::Cint
-export wglCintGpusFromAffinityDCNV
+@getCFun "libGL" wglEnumGpusFromAffinityDCNV wglEnumGpusFromAffinityDCNV(hAffinityDC::HDC, iGpuIndex::Cuint, hGpu::HGPUNV)::Cint
+export wglEnumGpusFromAffinityDCNV
 @getCFun "libGL" wglDeleteDCNV wglDeleteDCNV(hdc::HDC)::Cint
 export wglDeleteDCNV
-@getCFun "libGL" wglCinterateVideoDevicesNV wglCinterateVideoDevicesNV(hDC::HDC, phDeviceList::HVIDEOOUTPUTDEVICENV)::Cint
-export wglCinterateVideoDevicesNV
+@getCFun "libGL" wglEnumerateVideoDevicesNV wglEnumerateVideoDevicesNV(hDC::HDC, phDeviceList::HVIDEOOUTPUTDEVICENV)::Cint
+export wglEnumerateVideoDevicesNV
 @getCFun "libGL" wglBindVideoDeviceNV wglBindVideoDeviceNV(hDC::HDC, uVideoSlot::Cuint, hVideoDevice::HVIDEOOUTPUTDEVICENV, piAttribList::Ptr{Cint})::Cint
 export wglBindVideoDeviceNV
 @getCFun "libGL" wglQueryCurrentContextNV wglQueryCurrentContextNV(iAttribute::Cint, piValue::Ptr{Cint})::Cint
@@ -713,8 +713,8 @@ export wglResetFrameCountNV
 export wglAllocateMemoryNV
 @getCFun "libGL" wglBindVideoCaptureDeviceNV wglBindVideoCaptureDeviceNV(uVideoSlot::Cuint, hDevice::HVIDEOINPUTDEVICENV)::Cint
 export wglBindVideoCaptureDeviceNV
-@getCFun "libGL" wglCinterateVideoCaptureDevicesNV wglCinterateVideoCaptureDevicesNV(hDc::HDC, phDeviceList::HVIDEOINPUTDEVICENV)::Cuint
-export wglCinterateVideoCaptureDevicesNV
+@getCFun "libGL" wglEnumerateVideoCaptureDevicesNV wglEnumerateVideoCaptureDevicesNV(hDc::HDC, phDeviceList::HVIDEOINPUTDEVICENV)::Cuint
+export wglEnumerateVideoCaptureDevicesNV
 @getCFun "libGL" wglLockVideoCaptureDeviceNV wglLockVideoCaptureDeviceNV(hDc::HDC, hDevice::HVIDEOINPUTDEVICENV)::Cint
 export wglLockVideoCaptureDeviceNV
 @getCFun "libGL" wglQueryVideoCaptureDeviceNV wglQueryVideoCaptureDeviceNV(hDc::HDC, hDevice::HVIDEOINPUTDEVICENV, iAttribute::Cint, piValue::Ptr{Cint})::Cint
