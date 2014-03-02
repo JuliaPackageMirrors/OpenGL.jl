@@ -5,6 +5,8 @@ import OpenGLStd.glVertex2i, OpenGLStd.glVertex3i, OpenGLStd.glVertex2d, OpenGLS
        OpenGLStd.glTexCoord4d, OpenGLStd.glNormal3d, OpenGLStd.glColor3f, OpenGLStd.glColor4f, OpenGLStd.glColor3b, OpenGLStd.glColor4b,
        OpenGLStd.glScaled, OpenGLStd.glTranslated, OpenGLStd.glRotated, OpenGLStd.glEnable, OpenGLStd.glDisable, OpenGLStd.glBegin,
        OpenGLStd.glEnd, OpenGLStd.glPushMatrix, OpenGLStd.glLoadIdentity
+       
+import Images.imread
 
 #Handy stuff to make use of Julia features.
 export glVertex, glColor, glColorb, glTexCoord, glNormal,
