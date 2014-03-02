@@ -3543,7 +3543,7 @@ export glIndexubv
 export glBlendColor
 @getCFun "libGL" glBlendEquation glBlendEquation(mode::GLenum)::Void
 export glBlendEquation
-@getCFun "libGL" glDrawRangeElements glDrawRangeElements(mode::GLenum, start::GLuint, end::GLuint, count::GLsizei, type_::GLenum, indices::Ptr{Void})::Void
+@getCFun "libGL" glDrawRangeElements glDrawRangeElements(mode::GLenum, start::GLuint, END::GLuint, count::GLsizei, type_::GLenum, indices::Ptr{Void})::Void
 export glDrawRangeElements
 @getCFun "libGL" glTexImage3D glTexImage3D(target::GLenum, level::GLint, internalformat::GLint, width::GLsizei, height::GLsizei, depth::GLsizei, border::GLint, format::GLenum, type_::GLenum, pixels::Ptr{Void})::Void
 export glTexImage3D
@@ -3947,7 +3947,7 @@ export glGetBufferParameteri64v
 export glFramebufferTexture
 @getCFun "libGL" glDrawElementsBaseVertex glDrawElementsBaseVertex(mode::GLenum, count::GLsizei, type_::GLenum, indices::Ptr{Void}, basevertex::GLint)::Void
 export glDrawElementsBaseVertex
-@getCFun "libGL" glDrawRangeElementsBaseVertex glDrawRangeElementsBaseVertex(mode::GLenum, start::GLuint, end::GLuint, count::GLsizei, type_::GLenum, indices::Ptr{Void}, basevertex::GLint)::Void
+@getCFun "libGL" glDrawRangeElementsBaseVertex glDrawRangeElementsBaseVertex(mode::GLenum, start::GLuint, END::GLuint, count::GLsizei, type_::GLenum, indices::Ptr{Void}, basevertex::GLint)::Void
 export glDrawRangeElementsBaseVertex
 @getCFun "libGL" glDrawElementsInstancedBaseVertex glDrawElementsInstancedBaseVertex(mode::GLenum, count::GLsizei, type_::GLenum, indices::Ptr{Void}, instancecount::GLsizei, basevertex::GLint)::Void
 export glDrawElementsInstancedBaseVertex
@@ -4409,7 +4409,7 @@ export glCopyImageSubData
 export glDebugMessageControl
 @getCFun "libGL" glDebugMessageInsert glDebugMessageInsert(source::GLenum, type_::GLenum, id::GLuint, severity::GLenum, length::GLsizei, buf::Ptr{GLchar})::Void
 export glDebugMessageInsert
-@getCFun "libGL" glDebugMessageCallback glDebugMessageCallback((*[0]byte)(callback), userParam::Ptr{Void})::Void
+@getCFun "libGL" glDebugMessageCallback glDebugMessageCallback(callback::Ptr{Void}, userParam::Ptr{Void})::Void
 export glDebugMessageCallback
 @getCFun "libGL" glGetDebugMessageLog glGetDebugMessageLog(count::GLuint, bufsize::GLsizei, sources::Ptr{GLenum}, types::Ptr{GLenum}, ids::Ptr{GLuint}, severities::Ptr{GLenum}, lengths::Ptr{GLsizei}, messageLog::Ptr{GLchar})::Cuint
 export glGetDebugMessageLog
