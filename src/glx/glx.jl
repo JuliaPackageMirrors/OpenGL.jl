@@ -521,8 +521,8 @@ export glxReleaseBuffersMESA
 export glxSet3DfxModeMESA
 @getCFun "libGL" glxCopyImageSubDataNV glxCopyImageSubDataNV(dpy::Ptr{Display}, srcCtx::GLXContext, srcName::GLuint, srcTarget::GLenum, srcLevel::GLint, srcX::GLint, srcY::GLint, srcZ::GLint, dstCtx::GLXContext, dstName::GLuint, dstTarget::GLenum, dstLevel::GLint, dstX::GLint, dstY::GLint, dstZ::GLint, width::GLsizei, height::GLsizei, depth::GLsizei)::Void
 export glxCopyImageSubDataNV
-@getCFun "libGL" glxCinterateVideoDevicesNV glxCinterateVideoDevicesNV(dpy::Ptr{Display}, screen::Cint, nelements::Ptr{Cint})::Ptr{Cuint}
-export glxCinterateVideoDevicesNV
+@getCFun "libGL" glxEnumerateVideoDevicesNV glxEnumerateVideoDevicesNV(dpy::Ptr{Display}, screen::Cint, nelements::Ptr{Cint})::Ptr{Cuint}
+export glxEnumerateVideoDevicesNV
 @getCFun "libGL" glxBindVideoDeviceNV glxBindVideoDeviceNV(dpy::Ptr{Display}, video_slot::Cuint, video_device::Cuint, attrib_list::Ptr{Cint})::Cint
 export glxBindVideoDeviceNV
 @getCFun "libGL" glxJoinSwapGroupNV glxJoinSwapGroupNV(dpy::Ptr{Display}, drawable::GLXDrawable, group::GLuint)::Cint
@@ -539,8 +539,8 @@ export glxQueryFrameCountNV
 export glxResetFrameCountNV
 @getCFun "libGL" glxBindVideoCaptureDeviceNV glxBindVideoCaptureDeviceNV(dpy::Ptr{Display}, video_capture_slot::Cuint, device::GLXVideoCaptureDeviceNV)::Cint
 export glxBindVideoCaptureDeviceNV
-@getCFun "libGL" glxCinterateVideoCaptureDevicesNV glxCinterateVideoCaptureDevicesNV(dpy::Ptr{Display}, screen::Cint, nelements::Ptr{Cint})::Ptr{Void}
-export glxCinterateVideoCaptureDevicesNV
+@getCFun "libGL" glxEnumerateVideoCaptureDevicesNV glxEnumerateVideoCaptureDevicesNV(dpy::Ptr{Display}, screen::Cint, nelements::Ptr{Cint})::Ptr{Void}
+export glxEnumerateVideoCaptureDevicesNV
 @getCFun "libGL" glxLockVideoCaptureDeviceNV glxLockVideoCaptureDeviceNV(dpy::Ptr{Display}, device::GLXVideoCaptureDeviceNV)::Void
 export glxLockVideoCaptureDeviceNV
 @getCFun "libGL" glxQueryVideoCaptureDeviceNV glxQueryVideoCaptureDeviceNV(dpy::Ptr{Display}, device::GLXVideoCaptureDeviceNV, attribute::Cint, value::Ptr{Cint})::Cint
@@ -635,8 +635,8 @@ export glxCushionSGI
 export glxMakeCurrentReadSGI
 @getCFun "libGL" glxGetCurrentReadDrawableSGI glxGetCurrentReadDrawableSGI()::Ptr{Void}
 export glxGetCurrentReadDrawableSGI
-@getCFun "libGL" glxSwapCintervalSGI glxSwapCintervalSGI(interval::Cint)::Cint
-export glxSwapCintervalSGI
+@getCFun "libGL" glxSwapIntervalSGI glxSwapIntervalSGI(interval::Cint)::Cint
+export glxSwapIntervalSGI
 @getCFun "libGL" glxGetVideoSyncSGI glxGetVideoSyncSGI(count::Ptr{uint32})::Cint
 export glxGetVideoSyncSGI
 @getCFun "libGL" glxWaitVideoSyncSGI glxWaitVideoSyncSGI(divisor::Cint, remainder::Cint, count::Ptr{uint32})::Cint
