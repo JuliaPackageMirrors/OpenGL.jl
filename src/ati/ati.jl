@@ -405,7 +405,7 @@ export glDrawBuffersATI
 export glElementPointerATI
 @getCFun "libGL" glDrawElementArrayATI glDrawElementArrayATI(mode::GLenum, count::GLsizei)::Void
 export glDrawElementArrayATI
-@getCFun "libGL" glDrawRangeElementArrayATI glDrawRangeElementArrayATI(mode::GLenum, start::GLuint, end::GLuint, count::GLsizei)::Void
+@getCFun "libGL" glDrawRangeElementArrayATI glDrawRangeElementArrayATI(mode::GLenum, start::GLuint, END::GLuint, count::GLsizei)::Void
 export glDrawRangeElementArrayATI
 @getCFun "libGL" glTexBumpParameterivATI glTexBumpParameterivATI(pname::GLenum, param::Ptr{GLint})::Void
 export glTexBumpParameterivATI

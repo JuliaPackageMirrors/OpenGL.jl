@@ -2165,7 +2165,7 @@ export glIsEnabledIndexedEXT
 export glDrawArraysInstancedEXT
 @getCFun "libGL" glDrawElementsInstancedEXT glDrawElementsInstancedEXT(mode::GLenum, count::GLsizei, type_::GLenum, indices::Ptr{Void}, primcount::GLsizei)::Void
 export glDrawElementsInstancedEXT
-@getCFun "libGL" glDrawRangeElementsEXT glDrawRangeElementsEXT(mode::GLenum, start::GLuint, end::GLuint, count::GLsizei, type_::GLenum, indices::Ptr{Void})::Void
+@getCFun "libGL" glDrawRangeElementsEXT glDrawRangeElementsEXT(mode::GLenum, start::GLuint, END::GLuint, count::GLsizei, type_::GLenum, indices::Ptr{Void})::Void
 export glDrawRangeElementsEXT
 @getCFun "libGL" glFogCoordfEXT glFogCoordfEXT(coord::GLfloat)::Void
 export glFogCoordfEXT

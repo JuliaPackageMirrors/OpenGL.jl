@@ -1,4 +1,4 @@
-module NV 
+module NVIDIA
 
 import GetC.@getCFun
 
