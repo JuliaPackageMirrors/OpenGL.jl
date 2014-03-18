@@ -3691,7 +3691,7 @@ export glProgramParameteri
 export glUseProgramStages
 @getCFun "libGL" glActiveShaderProgram glActiveShaderProgram(pipeline::GLuint, program::GLuint)::Void
 export glActiveShaderProgram
-@getCFun "libGL" glCreateShaderProgramv glCreateShaderProgramv(type_::GLenum, count::GLsizei, strings::Ptr{Cuint8})::Uint
+@getCFun "libGL" glCreateShaderProgramv glCreateShaderProgramv(type_::GLenum, count::GLsizei, strings::Ptr{Cuchar})::Cuint
 export glCreateShaderProgramv
 @getCFun "libGL" glBindProgramPipeline glBindProgramPipeline(pipeline::GLuint)::Void
 export glBindProgramPipeline
