@@ -1,29 +1,43 @@
 #  Jasper den Ouden 02-08-2012
 # Placed in public domain.
 
+module OpenGL
 
-require("OpenGL/src/glu/glu")
+macro version(v)
+    quote
+        local v = replace($v, ".", "")
+        local file = "OpenGL/src/gl$(v)/gl$(v)"
+        local aux = "OpenGL/src/gl$(v)/gl$(v)aux"
+        local glu = "OpenGL/src/glu/glu"
 
-global OpenGLver
-if OpenGLver == "1.0"
-    require("OpenGL/src/gl10/gl10")
-    require("OpenGL/src/gl10/gl10aux")
-elseif OpenGLver == "2.1"
-    require("OpenGL/src/gl21/gl21")
-    require("OpenGL/src/gl21/gl21aux")
-elseif OpenGLver == "3.2"
-    require("OpenGL/src/gl32/gl32")
-    require("OpenGL/src/gl32/gl32aux")
-elseif OpenGLver == "3.3"
-    require("OpenGL/src/gl33/gl33")
-    require("OpenGL/src/gl33/gl33aux")
-elseif OpenGLver == "4.2"
-    require("OpenGL/src/gl42/gl42")
-    require("OpenGL/src/gl42/gl42aux")
-elseif OpenGLver == "4.3"
-    require("OpenGL/src/gl43/gl43")
-    require("OpenGL/src/gl43/gl43aux")
+        # These two Base library calls are being used instead of just
+        # require()-ing the file because the require() function itself has a
+        # hardcoded context value of 'Main' when it evals the file contents.
+        #
+        # The only workaround I can think of is to make the same call that
+        # the require function makes, ourselves, in the context of our module.
+        OpenGL.eval(:(Base.include_from_node1(Base.find_in_path($file))))
+        # Unlike the require() function, the `using` builtin accepts a module
+        # context to operate within.
+        OpenGL.eval(Expr(:using, :OpenGL, :OpenGLStd))
+
+        # Same operations as above, for the auxiliary functions.
+        OpenGL.eval(:(Base.include_from_node1(Base.find_in_path($aux))))
+        OpenGL.eval(Expr(:using, :OpenGL, :OpenGLAux))
+
+        # GLU.
+        OpenGL.eval(:(Base.include_from_node1(Base.find_in_path($glu))))
+        OpenGL.eval(Expr(:using, :OpenGL, :GLU))
+
+    end
 end
 
-using GLU
-using OpenGLStd
+macro load()
+    quote
+        OpenGL.eval(Expr(:export, names(OpenGL.eval(:OpenGLStd))...))
+        OpenGL.eval(Expr(:export, names(OpenGL.eval(:OpenGLAux))...))
+        OpenGL.eval(Expr(:export, names(OpenGL.eval(:GLU))...))
+    end
+end
+
+end # module OpenGL
