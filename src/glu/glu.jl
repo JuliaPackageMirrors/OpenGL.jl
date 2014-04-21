@@ -3,6 +3,8 @@ module GLU
 
 import GetC.@getCFun
 
+const libGLU = @windows? "glu32" : "libGLU"
+
 typealias GLenum Uint32
 typealias GLboolean Uint8
 typealias GLbitfield Uint32
@@ -59,73 +61,73 @@ typealias uintptr_t Uint64
 typealias intmax_t Int64
 typealias uintmax_t Uint64
 typealias __gwchar_t Int32
-export GLenum 
-export GLboolean 
+export GLenum
+export GLboolean
 export GLbitfield
-export GLvoid 
-export GLbyte 
-export GLshort 
-export GLint 
-export GLubyte 
-export GLushort 
-export GLuint 
-export GLsizei 
-export GLfloat 
-export GLclampf 
-export GLdouble 
-export GLclampd 
-export ptrdiff_t 
-export size_t 
-export wchar_t 
-export GLchar 
-export GLintptr 
-export GLsizeiptr 
-export GLintptrARB 
-export GLsizeiptrARB 
-export GLcharARB 
+export GLvoid
+export GLbyte
+export GLshort
+export GLint
+export GLubyte
+export GLushort
+export GLuint
+export GLsizei
+export GLfloat
+export GLclampf
+export GLdouble
+export GLclampd
+export ptrdiff_t
+export size_t
+export wchar_t
+export GLchar
+export GLintptr
+export GLsizeiptr
+export GLintptrARB
+export GLsizeiptrARB
+export GLcharARB
 export GLhandleARBt32
-export GLhalfARB 
-export GLhalfNV 
-export int8_t 
-export int16_t 
-export int32_t 
-export int64_t 
-export uint8_t 
-export uint16_t 
-export uint32_t 
-export uint64_t 
-export int_least8_t 
-export int_least16_t 
-export int_least32_t 
-export int_least64_t 
-export uint_least8_t 
+export GLhalfARB
+export GLhalfNV
+export int8_t
+export int16_t
+export int32_t
+export int64_t
+export uint8_t
+export uint16_t
+export uint32_t
+export uint64_t
+export int_least8_t
+export int_least16_t
+export int_least32_t
+export int_least64_t
+export uint_least8_t
 export uint_least16_t
 export uint_least32_t
 export uint_least64_t
-export int_fast8_t 
-export int_fast16_t 
-export int_fast32_t 
-export int_fast64_t 
-export uint_fast8_t 
-export uint_fast16_t 
-export uint_fast32_t 
-export uint_fast64_t 
-export intptr_t 
-export uintptr_t 
-export intmax_t 
-export uintmax_t 
+export int_fast8_t
+export int_fast16_t
+export int_fast32_t
+export int_fast64_t
+export uint_fast8_t
+export uint_fast16_t
+export uint_fast32_t
+export uint_fast64_t
+export intptr_t
+export uintptr_t
+export intmax_t
+export uintmax_t
 export __gwchar_t
-@getCFun "libGLU" imaxabs imaxabs(__n::intmax_t)::intmax_t
+@getCFun libGLU imaxabs imaxabs(__n::intmax_t)::intmax_t
 export imaxabs
-@getCFun "libGLU" imaxdiv imaxdiv(__numer::intmax_t,__denom::intmax_t)::imaxdiv_t
+@getCFun libGLU imaxdiv imaxdiv(__numer::intmax_t,__denom::intmax_t)::imaxdiv_t
 export imaxdiv
-@getCFun "libGLU" strtoimax strtoimax(__nptr::Ptr,__endptr::Ptr,__base::Int32)::intmax_t
+@getCFun libGLU strtoimax strtoimax(__nptr::Ptr,__endptr::Ptr,__base::Int32)::intmax_t
 export strtoimax
-@getCFun "libGLU" strtoumax strtoumax(__nptr::Ptr,__endptr::Ptr,__base::Int32)::uintmax_t
+@getCFun libGLU strtoumax strtoumax(__nptr::Ptr,__endptr::Ptr,__base::Int32)::uintmax_t
 export strtoumax
-@getCFun "libGLU" wcstoimax wcstoimax(__nptr::Ptr,__endptr::Ptr,__base::Int32)::intmax_t
+@getCFun libGLU wcstoimax wcstoimax(__nptr::Ptr,__endptr::Ptr,__base::Int32)::intmax_t
 export wcstoimax
-@getCFun "libGLU" wcstoumax wcstoumax(__nptr::Ptr,__endptr::Ptr,__base::Int32)::uintmax_t
+@getCFun libGLU wcstoumax wcstoumax(__nptr::Ptr,__endptr::Ptr,__base::Int32)::uintmax_t
 export wcstoumax
 typealias GLint64EXT int64_t
 typealias GLuint64EXT uint64_t
@@ -133,29 +135,29 @@ typealias GLint64 int64_t
 typealias GLuint64 uint64_t
 typealias GLvdpauSurfaceNV GLintptr
 typealias GLeglImageOES Ptr
-export GLint64EXT 
-export GLuint64EXT 
-export GLint64 
-export GLuint64 
-export GLvdpauSurfaceNV 
-export GLeglImageOES 
-@getCFun "libGLU" gluPerspective gluPerspective(fovy::GLdouble,aspect::GLdouble,znear::GLdouble,zfar::GLdouble)::Void
+export GLint64EXT
+export GLuint64EXT
+export GLint64
+export GLuint64
+export GLvdpauSurfaceNV
+export GLeglImageOES
+@getCFun libGLU gluPerspective gluPerspective(fovy::GLdouble,aspect::GLdouble,znear::GLdouble,zfar::GLdouble)::Void
 export gluPerspective
-@getCFun "libGLU" gluBuild2DMipmaps gluBuild2DMipmaps(target::GLenum,internalFormat::GLint,width::GLsizei,height::GLsizei,format::GLenum,thetype::GLenum,data::Ptr{Uint8})::GLint
+@getCFun libGLU gluBuild2DMipmaps gluBuild2DMipmaps(target::GLenum,internalFormat::GLint,width::GLsizei,height::GLsizei,format::GLenum,thetype::GLenum,data::Ptr{Uint8})::GLint
 export gluBuild2DMipmaps
-@getCFun "libGLU" gluNewQuadric gluNewQuadric()::Ptr{Void}
+@getCFun libGLU gluNewQuadric gluNewQuadric()::Ptr{Void}
 export gluNewQuadric
-@getCFun "libGLU" gluQuadricNormals gluQuadricNormals(quad::Ptr{Void},normal::GLenum)::Void
+@getCFun libGLU gluQuadricNormals gluQuadricNormals(quad::Ptr{Void},normal::GLenum)::Void
 export gluQuadricNormals
-@getCFun "libGLU" gluQuadricTexture gluQuadricTexture(quad::Ptr{Void},texture::GLboolean)::Void
+@getCFun libGLU gluQuadricTexture gluQuadricTexture(quad::Ptr{Void},texture::GLboolean)::Void
 export gluQuadricTexture
-@getCFun "libGLU" gluCylinder gluCylinder(quad::Ptr{Void},base::GLdouble,top::GLdouble,height::GLdouble,slices::GLint,stacks::GLint)::Void
+@getCFun libGLU gluCylinder gluCylinder(quad::Ptr{Void},base::GLdouble,top::GLdouble,height::GLdouble,slices::GLint,stacks::GLint)::Void
 export gluCylinder
-@getCFun "libGLU" gluDisk gluDisk(quad::Ptr{Void},inner::GLdouble,outer::GLdouble,slices::GLint,stacks::GLint)::Void
+@getCFun libGLU gluDisk gluDisk(quad::Ptr{Void},inner::GLdouble,outer::GLdouble,slices::GLint,stacks::GLint)::Void
 export gluDisk
-@getCFun "libGLU" gluSphere gluSphere(quad::Ptr{Void},radius::GLdouble,slices::GLint,stacks::GLint)::Void
+@getCFun libGLU gluSphere gluSphere(quad::Ptr{Void},radius::GLdouble,slices::GLint,stacks::GLint)::Void
 export gluSphere
-@getCFun "libGLU" gluPartialDisk gluPartialDisk(quad::Ptr{Void},inner::GLdouble,outer::GLdouble,slices::GLint,loops::GLint,start::GLdouble,sweep::GLdouble)::Void
+@getCFun libGLU gluPartialDisk gluPartialDisk(quad::Ptr{Void},inner::GLdouble,outer::GLdouble,slices::GLint,loops::GLint,start::GLdouble,sweep::GLdouble)::Void
 export gluPartialDisk
 const GLU_EXT_object_space_tess       = 1
 const GLU_EXT_nurbs_tessellator       = 1
@@ -312,160 +314,160 @@ const GLU_TESS_WINDING_POSITIVE       = 100132
 const GLU_TESS_WINDING_NEGATIVE       = 100133
 const GLU_TESS_WINDING_ABS_GEQ_TWO    = 100134
 const GLU_TESS_MAX_COORD              = 1.0e150
-export GLU_EXT_object_space_tess       
-export GLU_EXT_nurbs_tessellator       
-export GLU_FALSE                       
-export GLU_TRUE                        
-export GLU_VERSION_1_1                 
-export GLU_VERSION_1_2                 
-export GLU_VERSION_1_3                 
-export GLU_VERSION                     
-export GLU_EXTENSIONS                  
-export GLU_INVALID_ENUM                
-export GLU_INVALID_VALUE               
-export GLU_OUT_OF_MEMORY               
-export GLU_INCOMPATIBLE_GL_VERSION     
-export GLU_INVALID_OPERATION           
-export GLU_OUTLINE_POLYGON             
-export GLU_OUTLINE_PATCH               
-export GLU_NURBS_ERROR                 
-export GLU_ERROR                       
-export GLU_NURBS_BEGIN                 
-export GLU_NURBS_BEGIN_EXT             
-export GLU_NURBS_VERTEX                
-export GLU_NURBS_VERTEX_EXT            
-export GLU_NURBS_NORMAL                
-export GLU_NURBS_NORMAL_EXT            
-export GLU_NURBS_COLOR                 
-export GLU_NURBS_COLOR_EXT             
-export GLU_NURBS_TEXTURE_COORD         
-export GLU_NURBS_TEX_COORD_EXT         
-export GLU_NURBS_END                   
-export GLU_NURBS_END_EXT               
-export GLU_NURBS_BEGIN_DATA            
-export GLU_NURBS_BEGIN_DATA_EXT        
-export GLU_NURBS_VERTEX_DATA           
-export GLU_NURBS_VERTEX_DATA_EXT       
-export GLU_NURBS_NORMAL_DATA           
-export GLU_NURBS_NORMAL_DATA_EXT       
-export GLU_NURBS_COLOR_DATA            
-export GLU_NURBS_COLOR_DATA_EXT        
-export GLU_NURBS_TEXTURE_COORD_DATA    
-export GLU_NURBS_TEX_COORD_DATA_EXT    
-export GLU_NURBS_END_DATA              
-export GLU_NURBS_END_DATA_EXT          
-export GLU_NURBS_ERROR1                
-export GLU_NURBS_ERROR2                
-export GLU_NURBS_ERROR3                
-export GLU_NURBS_ERROR4                
-export GLU_NURBS_ERROR5                
-export GLU_NURBS_ERROR6                
-export GLU_NURBS_ERROR7                
-export GLU_NURBS_ERROR8                
-export GLU_NURBS_ERROR9                
-export GLU_NURBS_ERROR10               
-export GLU_NURBS_ERROR11               
-export GLU_NURBS_ERROR12               
-export GLU_NURBS_ERROR13               
-export GLU_NURBS_ERROR14               
-export GLU_NURBS_ERROR15               
-export GLU_NURBS_ERROR16               
-export GLU_NURBS_ERROR17               
-export GLU_NURBS_ERROR18               
-export GLU_NURBS_ERROR19               
-export GLU_NURBS_ERROR20               
-export GLU_NURBS_ERROR21               
-export GLU_NURBS_ERROR22               
-export GLU_NURBS_ERROR23               
-export GLU_NURBS_ERROR24               
-export GLU_NURBS_ERROR25               
-export GLU_NURBS_ERROR26               
-export GLU_NURBS_ERROR27               
-export GLU_NURBS_ERROR28               
-export GLU_NURBS_ERROR29               
-export GLU_NURBS_ERROR30               
-export GLU_NURBS_ERROR31               
-export GLU_NURBS_ERROR32               
-export GLU_NURBS_ERROR33               
-export GLU_NURBS_ERROR34               
-export GLU_NURBS_ERROR35               
-export GLU_NURBS_ERROR36               
-export GLU_NURBS_ERROR37               
-export GLU_AUTO_LOAD_MATRIX            
-export GLU_CULLING                     
-export GLU_SAMPLING_TOLERANCE          
-export GLU_DISPLAY_MODE                
-export GLU_PARAMETRIC_TOLERANCE        
-export GLU_SAMPLING_METHOD             
-export GLU_U_STEP                      
-export GLU_V_STEP                      
-export GLU_NURBS_MODE                  
-export GLU_NURBS_MODE_EXT              
-export GLU_NURBS_TESSELLATOR           
-export GLU_NURBS_TESSELLATOR_EXT       
-export GLU_NURBS_RENDERER              
-export GLU_NURBS_RENDERER_EXT          
-export GLU_OBJECT_PARAMETRIC_ERROR     
-export GLU_OBJECT_PARAMETRIC_ERROR_EXT 
-export GLU_OBJECT_PATH_LENGTH          
-export GLU_OBJECT_PATH_LENGTH_EXT      
-export GLU_PATH_LENGTH                 
-export GLU_PARAMETRIC_ERROR            
-export GLU_DOMAIN_DISTANCE             
-export GLU_MAP1_TRIM_2                 
-export GLU_MAP1_TRIM_3                 
-export GLU_POINT                       
-export GLU_LINE                        
-export GLU_FILL                        
-export GLU_SILHOUETTE                  
-export GLU_SMOOTH                      
-export GLU_FLAT                        
-export GLU_NONE                        
-export GLU_OUTSIDE                     
-export GLU_INSIDE                      
-export GLU_TESS_BEGIN                  
-export GLU_BEGIN                       
-export GLU_TESS_VERTEX                 
-export GLU_VERTEX                      
-export GLU_TESS_END                    
-export GLU_END                         
-export GLU_TESS_ERROR                  
-export GLU_TESS_EDGE_FLAG              
-export GLU_EDGE_FLAG                   
-export GLU_TESS_COMBINE                
-export GLU_TESS_BEGIN_DATA             
-export GLU_TESS_VERTEX_DATA            
-export GLU_TESS_END_DATA               
-export GLU_TESS_ERROR_DATA             
-export GLU_TESS_EDGE_FLAG_DATA         
-export GLU_TESS_COMBINE_DATA           
-export GLU_CW                          
-export GLU_CCW                         
-export GLU_INTERIOR                    
-export GLU_EXTERIOR                    
-export GLU_UNKNOWN                     
-export GLU_TESS_WINDING_RULE           
-export GLU_TESS_BOUNDARY_ONLY          
-export GLU_TESS_TOLERANCE              
-export GLU_TESS_ERROR1                 
-export GLU_TESS_ERROR2                 
-export GLU_TESS_ERROR3                 
-export GLU_TESS_ERROR4                 
-export GLU_TESS_ERROR5                 
-export GLU_TESS_ERROR6                 
-export GLU_TESS_ERROR7                 
-export GLU_TESS_ERROR8                 
-export GLU_TESS_MISSING_BEGIN_POLYGON  
-export GLU_TESS_MISSING_BEGIN_CONTOUR  
-export GLU_TESS_MISSING_END_POLYGON    
-export GLU_TESS_MISSING_END_CONTOUR    
-export GLU_TESS_COORD_TOO_LARGE        
-export GLU_TESS_NEED_COMBINE_CALLBACK  
-export GLU_TESS_WINDING_ODD            
-export GLU_TESS_WINDING_NONZERO        
-export GLU_TESS_WINDING_POSITIVE       
-export GLU_TESS_WINDING_NEGATIVE       
-export GLU_TESS_WINDING_ABS_GEQ_TWO    
-export GLU_TESS_MAX_COORD              
+export GLU_EXT_object_space_tess
+export GLU_EXT_nurbs_tessellator
+export GLU_FALSE
+export GLU_TRUE
+export GLU_VERSION_1_1
+export GLU_VERSION_1_2
+export GLU_VERSION_1_3
+export GLU_VERSION
+export GLU_EXTENSIONS
+export GLU_INVALID_ENUM
+export GLU_INVALID_VALUE
+export GLU_OUT_OF_MEMORY
+export GLU_INCOMPATIBLE_GL_VERSION
+export GLU_INVALID_OPERATION
+export GLU_OUTLINE_POLYGON
+export GLU_OUTLINE_PATCH
+export GLU_NURBS_ERROR
+export GLU_ERROR
+export GLU_NURBS_BEGIN
+export GLU_NURBS_BEGIN_EXT
+export GLU_NURBS_VERTEX
+export GLU_NURBS_VERTEX_EXT
+export GLU_NURBS_NORMAL
+export GLU_NURBS_NORMAL_EXT
+export GLU_NURBS_COLOR
+export GLU_NURBS_COLOR_EXT
+export GLU_NURBS_TEXTURE_COORD
+export GLU_NURBS_TEX_COORD_EXT
+export GLU_NURBS_END
+export GLU_NURBS_END_EXT
+export GLU_NURBS_BEGIN_DATA
+export GLU_NURBS_BEGIN_DATA_EXT
+export GLU_NURBS_VERTEX_DATA
+export GLU_NURBS_VERTEX_DATA_EXT
+export GLU_NURBS_NORMAL_DATA
+export GLU_NURBS_NORMAL_DATA_EXT
+export GLU_NURBS_COLOR_DATA
+export GLU_NURBS_COLOR_DATA_EXT
+export GLU_NURBS_TEXTURE_COORD_DATA
+export GLU_NURBS_TEX_COORD_DATA_EXT
+export GLU_NURBS_END_DATA
+export GLU_NURBS_END_DATA_EXT
+export GLU_NURBS_ERROR1
+export GLU_NURBS_ERROR2
+export GLU_NURBS_ERROR3
+export GLU_NURBS_ERROR4
+export GLU_NURBS_ERROR5
+export GLU_NURBS_ERROR6
+export GLU_NURBS_ERROR7
+export GLU_NURBS_ERROR8
+export GLU_NURBS_ERROR9
+export GLU_NURBS_ERROR10
+export GLU_NURBS_ERROR11
+export GLU_NURBS_ERROR12
+export GLU_NURBS_ERROR13
+export GLU_NURBS_ERROR14
+export GLU_NURBS_ERROR15
+export GLU_NURBS_ERROR16
+export GLU_NURBS_ERROR17
+export GLU_NURBS_ERROR18
+export GLU_NURBS_ERROR19
+export GLU_NURBS_ERROR20
+export GLU_NURBS_ERROR21
+export GLU_NURBS_ERROR22
+export GLU_NURBS_ERROR23
+export GLU_NURBS_ERROR24
+export GLU_NURBS_ERROR25
+export GLU_NURBS_ERROR26
+export GLU_NURBS_ERROR27
+export GLU_NURBS_ERROR28
+export GLU_NURBS_ERROR29
+export GLU_NURBS_ERROR30
+export GLU_NURBS_ERROR31
+export GLU_NURBS_ERROR32
+export GLU_NURBS_ERROR33
+export GLU_NURBS_ERROR34
+export GLU_NURBS_ERROR35
+export GLU_NURBS_ERROR36
+export GLU_NURBS_ERROR37
+export GLU_AUTO_LOAD_MATRIX
+export GLU_CULLING
+export GLU_SAMPLING_TOLERANCE
+export GLU_DISPLAY_MODE
+export GLU_PARAMETRIC_TOLERANCE
+export GLU_SAMPLING_METHOD
+export GLU_U_STEP
+export GLU_V_STEP
+export GLU_NURBS_MODE
+export GLU_NURBS_MODE_EXT
+export GLU_NURBS_TESSELLATOR
+export GLU_NURBS_TESSELLATOR_EXT
+export GLU_NURBS_RENDERER
+export GLU_NURBS_RENDERER_EXT
+export GLU_OBJECT_PARAMETRIC_ERROR
+export GLU_OBJECT_PARAMETRIC_ERROR_EXT
+export GLU_OBJECT_PATH_LENGTH
+export GLU_OBJECT_PATH_LENGTH_EXT
+export GLU_PATH_LENGTH
+export GLU_PARAMETRIC_ERROR
+export GLU_DOMAIN_DISTANCE
+export GLU_MAP1_TRIM_2
+export GLU_MAP1_TRIM_3
+export GLU_POINT
+export GLU_LINE
+export GLU_FILL
+export GLU_SILHOUETTE
+export GLU_SMOOTH
+export GLU_FLAT
+export GLU_NONE
+export GLU_OUTSIDE
+export GLU_INSIDE
+export GLU_TESS_BEGIN
+export GLU_BEGIN
+export GLU_TESS_VERTEX
+export GLU_VERTEX
+export GLU_TESS_END
+export GLU_END
+export GLU_TESS_ERROR
+export GLU_TESS_EDGE_FLAG
+export GLU_EDGE_FLAG
+export GLU_TESS_COMBINE
+export GLU_TESS_BEGIN_DATA
+export GLU_TESS_VERTEX_DATA
+export GLU_TESS_END_DATA
+export GLU_TESS_ERROR_DATA
+export GLU_TESS_EDGE_FLAG_DATA
+export GLU_TESS_COMBINE_DATA
+export GLU_CW
+export GLU_CCW
+export GLU_INTERIOR
+export GLU_EXTERIOR
+export GLU_UNKNOWN
+export GLU_TESS_WINDING_RULE
+export GLU_TESS_BOUNDARY_ONLY
+export GLU_TESS_TOLERANCE
+export GLU_TESS_ERROR1
+export GLU_TESS_ERROR2
+export GLU_TESS_ERROR3
+export GLU_TESS_ERROR4
+export GLU_TESS_ERROR5
+export GLU_TESS_ERROR6
+export GLU_TESS_ERROR7
+export GLU_TESS_ERROR8
+export GLU_TESS_MISSING_BEGIN_POLYGON
+export GLU_TESS_MISSING_BEGIN_CONTOUR
+export GLU_TESS_MISSING_END_POLYGON
+export GLU_TESS_MISSING_END_CONTOUR
+export GLU_TESS_COORD_TOO_LARGE
+export GLU_TESS_NEED_COMBINE_CALLBACK
+export GLU_TESS_WINDING_ODD
+export GLU_TESS_WINDING_NONZERO
+export GLU_TESS_WINDING_POSITIVE
+export GLU_TESS_WINDING_NEGATIVE
+export GLU_TESS_WINDING_ABS_GEQ_TWO
+export GLU_TESS_MAX_COORD
 
 end

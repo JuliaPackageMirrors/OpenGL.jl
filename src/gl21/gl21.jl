@@ -1,6 +1,8 @@
-module OpenGLStd 
+module OpenGLStd
 
 import GetC.@getCFun
+
+const libGL = @windows? "opengl32" : "libGL"
 
 typealias GLenum Cuint
 typealias GLboolean Cuchar
