@@ -3,6 +3,8 @@
 
 module OpenGL
 
+push!(Sys.DL_LOAD_PATH, "/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/")
+
 macro version(v)
     quote
         local v = replace($v, ".", "")
