@@ -142,7 +142,7 @@ export glBitmap
 export glBlendFunc
 @getCFun libGL glCallList glCallList(list::GLuint)::Void
 export glCallList
-@getCFun libGL glCallLists glCallLists(n::GLsizei, type::GLenum, lists::Ptr{Void})::Void
+@getCFun libGL glCallLists glCallLists(n::GLsizei, TYPE::GLenum, lists::Ptr{Void})::Void
 export glCallLists
 @getCFun libGL glClear glClear(mask::GLbitfield)::Void
 export glClear
@@ -226,7 +226,7 @@ export glColor4usv
 export glColorMask
 @getCFun libGL glColorMaterial glColorMaterial(face::GLenum, mode::GLenum)::Void
 export glColorMaterial
-@getCFun libGL glCopyPixels glCopyPixels(x::GLint, y::GLint, width::GLsizei, height::GLsizei, type::GLenum)::Void
+@getCFun libGL glCopyPixels glCopyPixels(x::GLint, y::GLint, width::GLsizei, height::GLsizei, TYPE::GLenum)::Void
 export glCopyPixels
 @getCFun libGL glCullFace glCullFace(mode::GLenum)::Void
 export glCullFace
@@ -242,7 +242,7 @@ export glDepthRange
 export glDisable
 @getCFun libGL glDrawBuffer glDrawBuffer(mode::GLenum)::Void
 export glDrawBuffer
-@getCFun libGL glDrawPixels glDrawPixels(width::GLsizei, height::GLsizei, format::GLenum, type::GLenum, pixels::Ptr{Void})::Void
+@getCFun libGL glDrawPixels glDrawPixels(width::GLsizei, height::GLsizei, format::GLenum, TYPE::GLenum, pixels::Ptr{Void})::Void
 export glDrawPixels
 @getCFun libGL glEdgeFlag glEdgeFlag(flag::GLboolean)::Void
 export glEdgeFlag
@@ -278,7 +278,7 @@ export glEvalMesh2
 export glEvalPoint1
 @getCFun libGL glEvalPoint2 glEvalPoint2(i::GLint, j::GLint)::Void
 export glEvalPoint2
-@getCFun libGL glFeedbackBuffer glFeedbackBuffer(size::GLsizei, type::GLenum, buffer::Ptr{GLfloat})::Void
+@getCFun libGL glFeedbackBuffer glFeedbackBuffer(size::GLsizei, TYPE::GLenum, buffer::Ptr{GLfloat})::Void
 export glFeedbackBuffer
 @getCFun libGL glFinish glFinish()::Void
 export glFinish
@@ -344,7 +344,7 @@ export glGetTexGendv
 export glGetTexGenfv
 @getCFun libGL glGetTexGeniv glGetTexGeniv(coord::GLenum, pname::GLenum, params::Ptr{GLint})::Void
 export glGetTexGeniv
-@getCFun libGL glGetTexImage glGetTexImage(target::GLenum, level::GLint, format::GLenum, type::GLenum, pixels::Ptr{Void})::Void
+@getCFun libGL glGetTexImage glGetTexImage(target::GLenum, level::GLint, format::GLenum, TYPE::GLenum, pixels::Ptr{Void})::Void
 export glGetTexImage
 @getCFun libGL glGetTexLevelParameterfv glGetTexLevelParameterfv(target::GLenum, level::GLint, pname::GLenum, params::Ptr{GLfloat})::Void
 export glGetTexLevelParameterfv
@@ -552,7 +552,7 @@ export glRasterPos4s
 export glRasterPos4sv
 @getCFun libGL glReadBuffer glReadBuffer(mode::GLenum)::Void
 export glReadBuffer
-@getCFun libGL glReadPixels glReadPixels(x::GLint, y::GLint, width::GLsizei, height::GLsizei, format::GLenum, type::GLenum, pixels::Ptr{Void})::Void
+@getCFun libGL glReadPixels glReadPixels(x::GLint, y::GLint, width::GLsizei, height::GLsizei, format::GLenum, TYPE::GLenum, pixels::Ptr{Void})::Void
 export glReadPixels
 @getCFun libGL glRectd glRectd(x1::GLdouble, y1::GLdouble, x2::GLdouble, y2::GLdouble)::Void
 export glRectd
@@ -676,9 +676,9 @@ export glTexGenfv
 export glTexGeni
 @getCFun libGL glTexGeniv glTexGeniv(coord::GLenum, pname::GLenum, params::Ptr{GLint})::Void
 export glTexGeniv
-@getCFun libGL glTexImage1D glTexImage1D(target::GLenum, level::GLint, internalformat::GLint, width::GLsizei, border::GLint, format::GLenum, type::GLenum, pixels::Ptr{Void})::Void
+@getCFun libGL glTexImage1D glTexImage1D(target::GLenum, level::GLint, internalformat::GLint, width::GLsizei, border::GLint, format::GLenum, TYPE::GLenum, pixels::Ptr{Void})::Void
 export glTexImage1D
-@getCFun libGL glTexImage2D glTexImage2D(target::GLenum, level::GLint, internalformat::GLint, width::GLsizei, height::GLsizei, border::GLint, format::GLenum, type::GLenum, pixels::Ptr{Void})::Void
+@getCFun libGL glTexImage2D glTexImage2D(target::GLenum, level::GLint, internalformat::GLint, width::GLsizei, height::GLsizei, border::GLint, format::GLenum, TYPE::GLenum, pixels::Ptr{Void})::Void
 export glTexImage2D
 @getCFun libGL glTexParameterf glTexParameterf(target::GLenum, pname::GLenum, param::GLfloat)::Void
 export glTexParameterf
