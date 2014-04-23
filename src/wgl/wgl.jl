@@ -1,4 +1,4 @@
-module WGL 
+module WGL
 
 import GetC.@getCFun
 

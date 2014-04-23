@@ -145,7 +145,7 @@ export UNSIGNED_INT_SAMPLER_BUFFER_AMD
 export glDebugMessageEnableAMD
 @getCFun libGL glDebugMessageInsertAMD glDebugMessageInsertAMD(category::GLenum, severity::GLenum, id::GLuint, length::GLsizei, buf::Ptr{GLchar})::Void
 export glDebugMessageInsertAMD
-@getCFun libGL glDebugMessageCallbackAMD glDebugMessageCallbackAMD(callback::Ptr{Void}, userParam::Ptr{Void})::Void
+@getCFun libGL glDebugMessageCallbackAMD glDebugMessageCallbackAMD(callback::Ptr{Cuchar}, userParam::Ptr{Void})::Void
 export glDebugMessageCallbackAMD
 @getCFun libGL glGetDebugMessageLogAMD glGetDebugMessageLogAMD(count::GLuint, bufsize::GLsizei, categories::Ptr{GLenum}, severities::Ptr{GLuint}, ids::Ptr{GLuint}, lengths::Ptr{GLsizei}, message::Ptr{GLchar})::Cuint
 export glGetDebugMessageLogAMD

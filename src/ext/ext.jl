@@ -2409,7 +2409,7 @@ export glBindBufferRangeEXT
 export glBindBufferOffsetEXT
 @getCFun libGL glBindBufferBaseEXT glBindBufferBaseEXT(target::GLenum, index::GLuint, buffer::GLuint)::Void
 export glBindBufferBaseEXT
-@getCFun libGL glTransformFeedbackVaryingsEXT glTransformFeedbackVaryingsEXT(program::GLuint, count::GLsizei, varyings::Ptr{Uint8}, bufferMode::GLenum)::Void
+@getCFun libGL glTransformFeedbackVaryingsEXT glTransformFeedbackVaryingsEXT(program::GLuint, count::GLsizei, varyings::Ptr{Cuchar}, bufferMode::GLenum)::Void
 export glTransformFeedbackVaryingsEXT
 @getCFun libGL glGetTransformFeedbackVaryingEXT glGetTransformFeedbackVaryingEXT(program::GLuint, index::GLuint, bufSize::GLsizei, length::Ptr{GLsizei}, size::Ptr{GLsizei}, type_::Ptr{GLenum}, name::Ptr{GLchar})::Void
 export glGetTransformFeedbackVaryingEXT

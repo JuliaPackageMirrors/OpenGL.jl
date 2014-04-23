@@ -3691,7 +3691,7 @@ export glIsProgram
 export glIsShader
 @getCFun libGL glLinkProgram glLinkProgram(program::GLuint)::Void
 export glLinkProgram
-@getCFun libGL glShaderSource glShaderSource(shader::GLuint, count::GLsizei, string_::Ptr{Uint8}, length::Ptr{GLint})::Void
+@getCFun libGL glShaderSource glShaderSource(shader::GLuint, count::GLsizei, string_::Ptr{Cuchar}, length::Ptr{GLint})::Void
 export glShaderSource
 @getCFun libGL glUseProgram glUseProgram(program::GLuint)::Void
 export glUseProgram
@@ -3769,7 +3769,7 @@ export glEndTransformFeedback
 export glBindBufferRange
 @getCFun libGL glBindBufferBase glBindBufferBase(target::GLenum, index::GLuint, buffer::GLuint)::Void
 export glBindBufferBase
-@getCFun libGL glTransformFeedbackVaryings glTransformFeedbackVaryings(program::GLuint, count::GLsizei, varyings::Ptr{Uint8}, bufferMode::GLenum)::Void
+@getCFun libGL glTransformFeedbackVaryings glTransformFeedbackVaryings(program::GLuint, count::GLsizei, varyings::Ptr{Cuchar}, bufferMode::GLenum)::Void
 export glTransformFeedbackVaryings
 @getCFun libGL glGetTransformFeedbackVarying glGetTransformFeedbackVarying(program::GLuint, index::GLuint, bufSize::GLsizei, length::Ptr{GLsizei}, size::Ptr{GLsizei}, type_::Ptr{GLenum}, name::Ptr{GLchar})::Void
 export glGetTransformFeedbackVarying
@@ -3927,7 +3927,7 @@ export glTexBuffer
 export glPrimitiveRestartIndex
 @getCFun libGL glCopyBufferSubData glCopyBufferSubData(readTarget::GLenum, writeTarget::GLenum, readOffset::GLintptr, writeOffset::GLintptr, size::GLsizeiptr)::Void
 export glCopyBufferSubData
-@getCFun libGL glGetUniformIndices glGetUniformIndices(program::GLuint, uniformCount::GLsizei, uniformNames::Ptr{Uint8}, uniformIndices::Ptr{GLuint})::Void
+@getCFun libGL glGetUniformIndices glGetUniformIndices(program::GLuint, uniformCount::GLsizei, uniformNames::Ptr{Cuchar}, uniformIndices::Ptr{GLuint})::Void
 export glGetUniformIndices
 @getCFun libGL glGetActiveUniformsiv glGetActiveUniformsiv(program::GLuint, uniformCount::GLsizei, uniformIndices::Ptr{GLuint}, pname::GLenum, params::Ptr{GLint})::Void
 export glGetActiveUniformsiv
@@ -4411,7 +4411,7 @@ export glCopyImageSubData
 export glDebugMessageControl
 @getCFun libGL glDebugMessageInsert glDebugMessageInsert(source::GLenum, type_::GLenum, id::GLuint, severity::GLenum, length::GLsizei, buf::Ptr{GLchar})::Void
 export glDebugMessageInsert
-@getCFun libGL glDebugMessageCallback glDebugMessageCallback(callback::Ptr{Void}, userParam::Ptr{Void})::Void
+@getCFun libGL glDebugMessageCallback glDebugMessageCallback(callback::Ptr{Cuchar}, userParam::Ptr{Void})::Void
 export glDebugMessageCallback
 @getCFun libGL glGetDebugMessageLog glGetDebugMessageLog(count::GLuint, bufsize::GLsizei, sources::Ptr{GLenum}, types::Ptr{GLenum}, ids::Ptr{GLuint}, severities::Ptr{GLenum}, lengths::Ptr{GLsizei}, messageLog::Ptr{GLchar})::Cuint
 export glGetDebugMessageLog
