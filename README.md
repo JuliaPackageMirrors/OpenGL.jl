@@ -27,28 +27,38 @@ loading the package.
 
 ```julia
 #Use OpenGL 1.0
-global OpenGLver="1.0"
 using OpenGL
+@OpenGL.version "1.0"
+@OpenGL.load
 
 #Use OpenGL 2.1
-global OpenGLver="2.1"
 using OpenGL
+@OpenGL.version "2.1"
+@OpenGL.load
 
 #Use OpenGL 3.2
-global OpenGLver="3.2"
 using OpenGL
+@OpenGL.version "3.2"
+@OpenGL.load
+
 
 #Use OpenGL 3.3
-global OpenGLver="3.3"
 using OpenGL
+@OpenGL.version "3.3"
+@OpenGL.load
+
 
 #Use OpenGL 4.2
-global OpenGLver="4.2"
 using OpenGL
+@OpenGL.version "4.2"
+@OpenGL.load
+
 
 #Use OpenGL 4.3
-global OpenGLver="4.3"
 using OpenGL
+@OpenGL.version "4.3"
+@OpenGL.load
+
 ```
 
 NOTE: It is not possible to load multiple versions of OpenGL into the
